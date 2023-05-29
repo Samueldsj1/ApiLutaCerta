@@ -6,6 +6,8 @@ public class Lutador {
     private double peso;
     private double altura;
     private String estiloLuta;
+    private String nacionalidade;
+    private String categoria;
 
 
     public String getNome() {
@@ -43,6 +45,20 @@ public class Lutador {
     public String getEstiloLuta() {
         return estiloLuta;
     }
+    public String getCategoria() {
+        return categoria;
+    }
+    public String setCategoria() {
+        this.categoria = categoria;
+    }
+
+    public String getNacionalidade() {
+        return nacionalidade;
+    }
+
+    public void setNacionalidade(String nacionalidade) {
+        this.nacionalidade = nacionalidade;
+    }
 
     public void setEstiloLuta(String estiloLuta) {
         this.estiloLuta = estiloLuta;
@@ -74,28 +90,36 @@ public class Lutador {
                 break;
         }
         System.out.println("Estilo de Luta: " + getEstiloLuta());
-    }
-    public void catPeso() {
-        String categoriaPeso = "";
 
-        if (this.peso <= 61.2) {
-            categoriaPeso = "Peso Leve";
-        } else if (this.peso <= 83.9) {
-            categoriaPeso = "Peso Medio";
-        } else {
-            categoriaPeso = "Peso Pesado";
-        }
-
-
-        System.out.println("Categoria: " + categoriaPeso);
     }
     public void mostrarLutador (){
         System.out.println("Nome: "+getNome());
+        System.out.println("Nacionalidade: "+getNacionalidade());
         System.out.println("Idade: "+getIdade());
         System.out.println("Altura: "+getAltura());
         System.out.println("Peso: "+getPeso());
+        System.out.println("Categotria: "+getCategoria());
         estiloLuta();
-        catPeso();
+
+    }
+
+    public Lutador(String nome, int idade, double peso, double altura, String estiloLuta, String nacionalidade) {
+        this.nome = nome;
+        this.idade = idade;
+        this.peso = peso;
+        this.altura = altura;
+        this.estiloLuta = estiloLuta;
+        this.nacionalidade = nacionalidade;
+    }
+
+    public void mostrarCategoria(){
+        if (this.peso <= 61.2) {
+            this.categoria = "Peso Leve";
+        } else if (this.peso <= 83.9) {
+            this.categoria = "Peso Medio";
+        } else {
+            this.categoria = "Peso Pesado";
+        }
     }
 }
 
